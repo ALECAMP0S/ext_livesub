@@ -1,6 +1,6 @@
-# Subtitle Extension
+# Instant Translate
 
-Subtitle Extension is a Chrome extension that allows you to subtitle audio on websites.
+Instant Translate is a Chrome extension that allows you to subtitle audio on websites.
 
 ## Features
 
@@ -28,10 +28,6 @@ Subtitle Extension is a Chrome extension that allows you to subtitle audio on we
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the GitHub repository.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
