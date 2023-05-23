@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "LiveSUB",
+    "name": "Instant Translate",
     "version": "1.0",
-    "description": "Una extensión que subtitula el audio que se reproduce en el navegador.",
+    "description": "What a beautiful chrome extension! makes your browsing simpler!.",
     "icons": {
       "16": "icon16.png",
       "48": "icon48.png",
@@ -19,7 +19,7 @@
         "48": "icon48.png",
         "128": "icon128.png"
       },
-      "default_title": "Subtitulador de audio",
+      "default_title": "Instant Translate, Sub your chrome all the time!",
       "default_popup": "popup.html"
     },
     "background": {
