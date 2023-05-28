@@ -1,39 +1,38 @@
 {
-    "manifest_version": 3,
-    "name": "Instant Translate",
-    "version": "1.0",
-    "description": "What a beautiful chrome extension! makes your browsing simpler!.",
-    "icons": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
-    },
+  "manifest_version": 3,
+  "name": "TRANSCALL",
+  "version": "1.0",
+  "description": "Extensión para traducción y transcripción de videollamadas",
+  "background": {
+    "service_worker": ["background.js"]
+  },
     "permissions": [
-      "tabs",
-      "activeTab",
-      "tabCapture"
-    ],
-    "optional_host_permissions": [
-      "*://*/*"
-    ],
-    "browser_action": {
-      "default_icon": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-        "128": "icon128.png"
-      },
-      "default_title": "Instant Translate, Sub your chrome all the time!",
-      "default_popup": "popup.html"
-    },
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
-    },
-    "content_scripts": [
-      {
-        "matches": ["http://*/*", "https://*/*"],
-        "js": ["content.js"],
-        "run_at": "document_idle"
-      }
-    ]
+    "activeTab",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "identity",
+    "nativeMessaging",
+    "notifications",
+    "contextMenus",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "host_permissions": [ "<all_urls>" ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon_16.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png"
   }
+}

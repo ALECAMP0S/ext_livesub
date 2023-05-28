@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Instant Translate",
+  "version": "1.0",
+  "description": "What a beautiful chrome extension! makes your browsing simpler!.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "tabCapture"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Instant Translate, Sub your chrome all the time!",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
