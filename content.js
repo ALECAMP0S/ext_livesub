@@ -1,21 +1,25 @@
-// Listener para recibir mensajes de background.js
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request.action === "startRecognition") {
-    startRecognition(request.language);
-    sendResponse({ success: true });
-  } else if (request.action === "getStatus") {
-    var isRecognizing = checkRecognitionStatus();
-    sendResponse({ isRecognizing: isRecognizing });
+// Escuchar mensajes del archivo de fondo
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === 'translateText') {
+    // Realizar traducción del texto recibido
+    const translatedText = translateText(message.text, message.sourceLanguage, message.targetLanguage);
+
+    // Enviar la traducción al archivo de fondo
+    sendResponse({ translatedText });
   }
 });
 
-function startRecognition(language) {
-  // Lógica para iniciar el reconocimiento de voz en el idioma especificado
-  console.log("Reconocimiento de voz iniciado en el idioma:", language);
-}
+// Función para realizar la traducción del texto
+function translateText(text, sourceLanguage, targetLanguage) {
+  // Utilizar la biblioteca o servicio de traducción que elijas para realizar la traducción
+  // Implementa la lógica necesaria aquí
 
-function checkRecognitionStatus() {
-  // Lógica para verificar el estado actual del reconocimiento de voz
-  var isRecognizing = false; // Cambiar según la lógica de tu extensión
-  return isRecognizing;
+  // Ejemplo: Utilizando la API de Google Translate
+  const apiKey = 'TU_API_KEY';
+  const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
+
+  // Realizar la solicitud de traducción
+  // Implementa la lógica necesaria aquí
+
+  return translatedText;
 }

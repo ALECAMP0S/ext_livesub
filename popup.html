@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Instant Translate</title>
-  <link rel="stylesheet" href="popup.css">
+  <title>TRANSCALL</title>
+  <link rel="stylesheet" type="text/css" href="popup.css">
+  <script src="popup.js"></script>
 </head>
 <body>
-  <h1>Instant Translate</h1>
-  <div class="language-select-container">
-    <label for="language-select">Idioma:</label>
-    <select id="language-select"></select>
+  <h1>TRANSCALL</h1>
+  <div id="translationSection">
+    <h2>Traducción en tiempo real:</h2>
+    <select id="sourceLanguage">
+      <option value="es">Español</option>
+      <option value="en">Inglés</option>
+      <option value="zh">Chino</option>
+      <option value="de">Alemán</option>
+      <option value="fr">Francés</option>
+      <option value="it">Italiano</option>
+      <option value="pt">Portugués</option>
+      <option value="ru">Ruso</option>
+      <option value="ja">Japonés</option>
+    </select>
+    <select id="targetLanguage">
+      <option value="es">Español</option>
+      <option value="en">Inglés</option>
+      <option value="zh">Chino</option>
+      <option value="de">Alemán</option>
+      <option value="fr">Francés</option>
+      <option value="it">Italiano</option>
+      <option value="pt">Portugués</option>
+      <option value="ru">Ruso</option>
+      <option value="ja">Japonés</option>
+    </select>
+    <button id="startTranslation">Iniciar Traducción</button>
+    <button id="stopTranslation">Detener Traducción</button>
+    <p id="translationResult"></p>
   </div>
-  <div class="button-container">
-    <button id="start-button">Iniciar</button>
-    <button id="stop-button">Detener</button>
+  <div id="transcriptionSection">
+    <h2>Transcripción de la reunión:</h2>
+    <input type="email" id="emailInput" placeholder="Correo electrónico">
+    <button id="startTranscription">Iniciar Transcripción</button>
+    <button id="stopTranscription">Detener Transcripción</button>
+    <p id="transcriptionResult"></p>
   </div>
-  <script src="popup.js"></script>
 </body>
 </html>

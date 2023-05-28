@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "TRANSCALL",
+  "version": "1.0",
+  "description": "Extensión para traducción y transcripción de videollamadas",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "identity",
+    "nativeMessaging",
+    "notifications",
+    "contextMenus",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon_16.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png"
+  }
+}
